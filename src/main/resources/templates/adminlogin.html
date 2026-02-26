@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Taxi Booking</title>
+</head>
+<body>
+
+	<div th:if="${param.error}">
+		<h2>INVALID CREDENTIAL</h2>
+	</div>
+	
+	<!-- If you will not use custom logout handler only then this message will print 
+	else control goes to the customLogoutHandler -->
+	<div th:if="${logout}">
+		<h2>YOU HAVE BEEN SUCCESSFULLY LOGGED OUT.</h2>
+	</div>
+
+	<form action="/login" method="post">
+		<input name="username" type="text" placeholder="Enter username"> <br>
+		<input name="password" type="password" placeholder="Enter password"> <br>		
+		<button>login</button>
+	</form>
+	
+</body>
+</html>
